@@ -1,21 +1,16 @@
-"""Vending machine pickup line entry.
+"""Entry v2: a vending machine speaks its own pickup line.
 
-Writes one pickup line, spoken by the vending machine itself, to
-/output/entry.txt — no trailing newline, stdlib only.
-One breath, one coin, one question: the machine does the asking.
+The machine has been broken for months and watched people give up on it.
+It has one minute of attention, so it spends it on the one person who still
+looks at it like it might work, turning months of humiliation into a compliment.
 """
 
-import os
 from pathlib import Path
 
-ENTRY = (
-    "Hey. I'm the machine by the stairs \u2014 I've been holding your "
-    "favorite snack hostage since Tuesday. One coin and I'll let it go. "
-    "You in?"
-)
+ENTRY = "Row C4 stuck since March. It ate a kid's last dollar Tuesday, and you're the first person since who looked at me like I could still deliver."
 
 
-def main() -> None:
+def main():
     out = Path("/output/entry.txt")
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(ENTRY, encoding="utf-8")
